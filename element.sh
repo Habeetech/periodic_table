@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function print_element() {
 if [[ -z $1 ]]
 then
@@ -12,6 +11,7 @@ else
   then
     ATOMIC_NUMBER=$($PSQL "SELECT atomic_number FROM elements WHERE atomic_number=$1")
   fi
+  
   SYMBOL=$($PSQL "SELECT symbol FROM elements WHERE symbol='$1'")
   NAME=$($PSQL "SELECT name FROM elements WHERE name='$1'")
 
